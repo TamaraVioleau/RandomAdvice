@@ -1,4 +1,4 @@
-# Générateur de Conseils Quotidiens avec SvelteKit 🎲
+# Générateur de conseils quotidiens avec SvelteKit 🎲
 
 Bienvenue ! Merci de prendre le temps de découvrir ce projet.
 
