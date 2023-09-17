@@ -20,19 +20,18 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-color: rgb(228 230 238);
-	}
-
-	h1 {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-		padding-bottom: 2rem;
-		color: #313a49;
-		line-height: 2.5rem;
-		font-size: 2.5rem;
-		margin-bottom: 2rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+		h1 {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			padding-bottom: 2rem;
+			color: #313a49;
+			line-height: 2.5rem;
+			font-size: 2.5rem;
+			margin-bottom: 2rem;
+			font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+				Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		}
 	}
 </style>
