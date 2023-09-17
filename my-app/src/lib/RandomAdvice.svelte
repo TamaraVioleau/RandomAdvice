@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import translate from 'translate';
 
+	let title = 'Advice of the Day'; // Variable pour le titre
 	let advice = '';
 	let id = '';
 	let currentDate = new Date().toLocaleDateString();
@@ -33,9 +34,12 @@
 
 	async function toggleTranslation() {
 		if (!isTranslated) {
+			const translatedTitle = await translate(title, { from: 'en', to: 'fr' });
 			const translatedAdvice = await translate(advice, { from: 'en', to: 'fr' });
+			title = translatedTitle;
 			advice = translatedAdvice;
 		} else {
+			title = 'Advice of the Day';
 			advice = localStorage.getItem('advice');
 		}
 		isTranslated = !isTranslated;
@@ -43,13 +47,16 @@
 </script>
 
 <section class="advice-section">
-	<h2 class="advice-section__title">Advice of the Day</h2>
+	<h2 class="advice-section__title" aria-live="polite" lang={isTranslated ? 'fr' : 'en'}>
+		{title}
+	</h2>
 	<time class="advice-section__date" datetime={currentDate}>{currentDate}</time>
 	<p class="advice-section__id">#{id}</p>
-	<p class="advice-section__text">{advice}</p>
-	<button on:click={toggleTranslation}>
+	<p class="advice-section__text" aria-live="polite" lang={isTranslated ? 'fr' : 'en'}>{advice}</p>
+	<button on:click={toggleTranslation} aria-labelledby="translateButton">
 		{#if isTranslated}
 			<img
+				id="translateButton"
 				width="50"
 				height="50"
 				src="https://img.icons8.com/clouds/100/great-britain.png"
@@ -58,15 +65,16 @@
 			/>
 		{:else}
 			<img
+				id="translateButton"
 				width="50"
 				height="50"
 				src="https://img.icons8.com/clouds/100/france.png"
 				alt="Traduire en français"
-				title="Traduire en anglais"
+				title="Traduire en français"
 			/>
 		{/if}
 	</button>
-	<img class="advice-section__separator advice-section__separator--image" alt="" />
+	<img class="advice-section__separator advice-section__separator--image" alt="Séparateur" />
 </section>
 
 <style lang="scss">
@@ -111,6 +119,8 @@
 		.advice-section__separator--image {
 			content: url('/src/images/pattern-divider-desktop.svg');
 			display: block;
+			width: 100%;
+			height: auto;
 		}
 
 		@media only screen and (max-width: 768px) {
