@@ -10,7 +10,7 @@ Ce générateur de conseils quotidiens a été construit en utilisant SvelteKit 
 
 - **Responsive Design**: L'application est entièrement responsive, s'adaptant à toutes les tailles d'écran.
 - **Interactivité**: Les états de survol sont gérés pour tous les éléments interactifs.
-- **Traduction du conseil** en cliquant sur le drapeau de traduction.
+- **Traduction du conseil** : En cliquant sur le drapeau de traduction.
 
 ## Installation et Utilisation 🛠️
 
@@ -23,6 +23,11 @@ Ce générateur de conseils quotidiens a été construit en utilisant SvelteKit 
 
 - `+page.svelte`: Le composant Svelte principal qui gère la mise en page et le routage.
 - `RandomAdvice.svelte`: Le composant Svelte qui s'occupe de la génération et de l'affichage des conseils ainsi que de la traduction du conseil.
+
+## API
+
+- **Pour la traduction** : `https://www.deepl.com/fr/docs-api/`
+- **Pour la génération de conseils** : `https://api.adviceslip.com/`
 
 ## Déploiement 🚀
 
