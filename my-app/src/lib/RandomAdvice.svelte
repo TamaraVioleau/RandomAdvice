@@ -47,9 +47,9 @@
 </script>
 
 <section class="advice-section">
-	<h2 class="advice-section__title" aria-live="polite" lang={isTranslated ? 'fr' : 'en'}>
+	<h1 class="advice-section__title" aria-live="polite" lang={isTranslated ? 'fr' : 'en'}>
 		{title}
-	</h2>
+	</h1>
 	<time class="advice-section__date" datetime={currentDate}>{currentDate}</time>
 	<p class="advice-section__id">#{id}</p>
 	<p class="advice-section__text" aria-live="polite" lang={isTranslated ? 'fr' : 'en'}>{advice}</p>
@@ -94,23 +94,24 @@
 		border-radius: 16px;
 		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 		border: 1px solid rgba(255, 255, 255, 0.3);
-		h2 {
+		h1 {
 			display: flex;
 			justify-content: center;
 			text-align: center;
 			margin-bottom: 1rem;
-			font-size: 1.8rem;
+			font-size: 2.5rem;
 		}
 		time {
 			font-size: 1.4rem;
 			margin-bottom: 1rem;
 		}
 		.advice-section__id {
+			margin: 0;
 		}
 		.advice-section__text {
 			font-size: 1.6rem;
 			margin-bottom: 1.5rem;
-			line-height: 1.5rem;
+			line-height: 2rem;
 		}
 		.advice-section__separator {
 			margin: 2rem 0 1rem 0;
